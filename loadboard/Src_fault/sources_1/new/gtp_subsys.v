@@ -118,7 +118,7 @@ module gtp_subsys(
        .s_axi_tx_tdata               (s_axi_tx_tdata),
        .s_axi_tx_tkeep               (4'b1111),
        .s_axi_tx_tvalid              (s_axi_tx_tvalid),
-       .s_axi_tx_tlast               (s_axi_tx_tlast),
+       .s_axi_tx_tlast               (1'b1),//s_axi_tx_tlast
        .s_axi_tx_tready              (s_axi_tx_tready),
 
         // AXI RX Interface

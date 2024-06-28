@@ -52,7 +52,7 @@ module axis2model_if(
             gtp2core_tready <= 1'b1;
         else if(gtp2core_tvalid & gtp2core_tready)
             gtp2core_tready <= 1'b0;
-        else if(ena_model&wea_model | no_fault_en)
+        else if(ena_model&wea_model | no_fault_en | fault_rd_en)
              gtp2core_tready <= 1'b1;
         else gtp2core_tready <= gtp2core_tready;
     end
@@ -867,11 +867,36 @@ module axis2model_if(
                                 addra_model <= 16'b0;
                                 dina_model  <= 8'b0;
                             end
-                8'h4F   :   begin
+                8'h4F   :   if({gtp2core_tdata_2r[31:24], gtp2core_tdata_2r[7:0]} == {wr_mode, 8'hFF}) begin
+                                addra_model <= gtp2core_tdata_2r[31:8];
+                                dina_model  <= 8'h4F;
+                            end
+                            else if({gtp2core_tdata_2r[31:24], gtp2core_tdata_2r[7:0]} == {wr_mode, 8'h00}) begin
                                 addra_model <= gtp2core_tdata_2r[31:8];
                                 dina_model  <= 8'h0F;
                             end
-                8'h50   :   begin
+                            else if(gtp2core_tdata_2r[31:24] == rd_mode) begin
+                                addra_model <= gtp2core_tdata_2r[31:8];
+                                dina_model  <= 8'h0F;
+                            end
+                            else begin //wr (00-FF)
+                                addra_model <= gtp2core_tdata_2r[31:8];
+                                dina_model  <= 8'h0F;
+                            end
+
+                8'h50   :   if({gtp2core_tdata_2r[31:24], gtp2core_tdata_2r[7:0]} == {wr_mode, 8'hFF}) begin
+                                addra_model <= gtp2core_tdata_2r[31:8];
+                                dina_model  <= 8'h10;
+                            end
+                            else if({gtp2core_tdata_2r[31:24], gtp2core_tdata_2r[7:0]} == {wr_mode, 8'h00}) begin
+                                addra_model <= gtp2core_tdata_2r[31:8];
+                                dina_model  <= 8'h50;
+                            end
+                            else if(gtp2core_tdata_2r[31:24] == rd_mode) begin
+                                addra_model <= gtp2core_tdata_2r[31:8];
+                                dina_model  <= 8'h10;
+                            end
+                            else begin //wr (00-FF)
                                 addra_model <= gtp2core_tdata_2r[31:8];
                                 dina_model  <= 8'h10;
                             end
@@ -884,11 +909,36 @@ module axis2model_if(
                                 addra_model <= 16'b0;
                                 dina_model  <= 8'b0;
                             end
-                8'h51   :   begin
+                8'h51   :   if({gtp2core_tdata_2r[31:24], gtp2core_tdata_2r[7:0]} == {wr_mode, 8'hFF}) begin
                                 addra_model <= gtp2core_tdata_2r[31:8];
                                 dina_model  <= 8'h11;
                             end
-                8'h52   :   begin
+                            else if({gtp2core_tdata_2r[31:24], gtp2core_tdata_2r[7:0]} == {wr_mode, 8'h00}) begin
+                                addra_model <= gtp2core_tdata_2r[31:8];
+                                dina_model  <= 8'h11;
+                            end
+                            else if(gtp2core_tdata_2r[31:24] == rd_mode) begin
+                                addra_model <= gtp2core_tdata_2r[31:8];
+                                dina_model  <= 8'h51;
+                            end
+                            else begin //wr (00-FF)
+                                addra_model <= gtp2core_tdata_2r[31:8];
+                                dina_model  <= 8'h11;
+                            end
+
+                8'h52   :   if({gtp2core_tdata_2r[31:24], gtp2core_tdata_2r[7:0]} == {wr_mode, 8'hFF}) begin
+                                addra_model <= gtp2core_tdata_2r[31:8];
+                                dina_model  <= 8'h12;
+                            end
+                            else if({gtp2core_tdata_2r[31:24], gtp2core_tdata_2r[7:0]} == {wr_mode, 8'h00}) begin
+                                addra_model <= gtp2core_tdata_2r[31:8];
+                                dina_model  <= 8'h12;
+                            end
+                            else if(gtp2core_tdata_2r[31:24] == rd_mode) begin
+                                addra_model <= gtp2core_tdata_2r[31:8];
+                                dina_model  <= 8'h52;
+                            end
+                            else begin //wr (00-FF)
                                 addra_model <= gtp2core_tdata_2r[31:8];
                                 dina_model  <= 8'h12;
                             end
@@ -1499,7 +1549,7 @@ module axis2model_if(
                             end
                             else if(gtp2core_tdata_2r[31:24] == rd_mode) begin
                                 addra_model <= gtp2core_tdata_2r[31:8];
-                                dina_model  <= 8'h21;                  
+                                dina_model  <= 8'hA1;   //21               
                             end
                             else begin //wr (00-FF)
                                 addra_model <= gtp2core_tdata_2r[31:8];
@@ -1515,7 +1565,7 @@ module axis2model_if(
                             end
                             else if(gtp2core_tdata_2r[31:24] == rd_mode) begin
                                 addra_model <= gtp2core_tdata_2r[31:8];
-                                dina_model  <= 8'h22;                  
+                                dina_model  <= 8'hA2;                  
                             end
                             else begin //wr (00-FF)
                                 addra_model <= gtp2core_tdata_2r[31:8];

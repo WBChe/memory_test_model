@@ -148,11 +148,11 @@ module axis2mem_if(
         end
         else if(rd_flag & (dut_data_2r[31] == 1'b0))begin
             dut2gtp_tdata <= {8'b0, addra_r, douta};
-            dut2gtp_tvalid  <= 1'b0;
+            dut2gtp_tvalid  <= 1'b1;
         end
         else if(rd_flag & (dut_data_2r[31] == 1'b1))begin
             dut2gtp_tdata <= {8'b0, addra_r, ~douta};
-            dut2gtp_tvalid  <= 1'b0;
+            dut2gtp_tvalid  <= 1'b1;
         end
         else begin
             dut2gtp_tdata <= 32'b0;

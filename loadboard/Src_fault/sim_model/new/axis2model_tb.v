@@ -90,12 +90,7 @@ module axis2model_tb(
      rst_n =1;
      #1000
      #1
-     gtp2core_tdata = 32'h80000005;
-     gtp2core_tvalid = 1;
-     #20
-     gtp2core_tvalid = 0;
-     #20
-     gtp2core_tdata = 32'h02000000;
+     gtp2core_tdata = 32'h80000022;
      gtp2core_tvalid = 1;
      #20
      gtp2core_tvalid = 0;
@@ -108,9 +103,18 @@ module axis2model_tb(
      gtp2core_tdata = 32'h03000000;
      gtp2core_tvalid = 1;
      #20
-     gtp2core_tdata = 0;
      gtp2core_tvalid = 0;
-     
+     #20
+     gtp2core_tdata = 32'h03000000;
+     gtp2core_tvalid = 1;
+     #20
+     gtp2core_tvalid = 0;
+     #20
+     gtp2core_tdata = 32'h03000000;
+     gtp2core_tvalid = 1;
+     #20
+     gtp2core_tvalid = 0;
+     gtp2core_tdata = 32'h0;
      #100
      
      gtp2core_tdata = 32'h80000106;
@@ -135,7 +139,7 @@ module axis2model_tb(
      gtp2core_tvalid = 0;
      
      #1000
-     gtp2core_tdata = 32'h8000000B;
+     gtp2core_tdata = 32'h8000000D;
      gtp2core_tvalid = 1;
      #20
      gtp2core_tvalid = 0;
