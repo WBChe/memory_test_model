@@ -80,7 +80,8 @@ assign wdata_4k_last = (waddr_cnt[9:0]==10'h3FF);
 assign wdata_burst_last = (wdata_burst_cnt==8'hFF);
 assign wdata_last = (wdata_cnt[29:0]==length[31:2]);
 
-assign convert2gdma_tvalid =(filter_packet_cnt>1)?gtp2gdma_tvalid:1'b0;
+//assign convert2gdma_tvalid =(filter_packet_cnt>1)?gtp2gdma_tvalid:1'b0;
+assign convert2gdma_tvalid =gtp2gdma_tvalid;
 assign convert2gdma_tdata = gtp2gdma_tdata;
 
 
@@ -105,14 +106,15 @@ always@(posedge clk or posedge rst) begin
         wdata_done <= (wdata_last)? 1'b1:1'b0;
 end
 
-always@(posedge clk or posedge rst) begin
-    if(rst)
-        filter_packet_cnt <= 3'b0;
-    else if(op_start)
-        filter_packet_cnt <= 3'b0;
-    else if(gtp2gdma_tvalid && gtp2gdma_tready && (filter_packet_cnt<2)) 
-        filter_packet_cnt <= filter_packet_cnt + 1'b1;
-end
+//new change 24.7.1
+//always@(posedge clk or posedge rst) begin
+//    if(rst)
+//        filter_packet_cnt <= 3'b0;
+//    else if(op_start)
+//        filter_packet_cnt <= 3'b0;
+//    else if(gtp2gdma_tvalid && gtp2gdma_tready && (filter_packet_cnt<2)) 
+//        filter_packet_cnt <= filter_packet_cnt + 1'b1;
+//end
 
 // ila_ddr_rdata ila_ddr_rdata (
 //	.clk(clk), // input wire clk

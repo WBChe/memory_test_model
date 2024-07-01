@@ -1,54 +1,63 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"0.752575",
-   "Default View_TopLeft":"-132,20",
-   "ExpandedHierarchyInLayout":"",
+   "Default View_TopLeft":"332,20",
+   "ExpandedHierarchyInLayout":"/axi_interconnect_1",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
-preplace port DDR3 -pg 1 -lvl 7 -x 1970 -y 170 -defaultsOSRD
-preplace port pcie_mgt -pg 1 -lvl 7 -x 1970 -y 520 -defaultsOSRD
-preplace port pcie_ref -pg 1 -lvl 0 -x -10 -y 490 -defaultsOSRD
-preplace port pcie2gdma_reg -pg 1 -lvl 7 -x 1970 -y 870 -defaultsOSRD
-preplace port gdma_pattern -pg 1 -lvl 0 -x -10 -y 80 -defaultsOSRD
-preplace port port-id_axi_aclk -pg 1 -lvl 7 -x 1970 -y 560 -defaultsOSRD
-preplace port port-id_pcie_rst_n -pg 1 -lvl 0 -x -10 -y 560 -defaultsOSRD
-preplace port port-id_axi_areset_n -pg 1 -lvl 7 -x 1970 -y 580 -defaultsOSRD
-preplace port port-id_sys_clk -pg 1 -lvl 0 -x -10 -y 180 -defaultsOSRD
-preplace port port-id_host_rst -pg 1 -lvl 0 -x -10 -y 280 -defaultsOSRD
-preplace inst axi_bram_ctrl_0 -pg 1 -lvl 5 -x 1540 -y 870 -defaultsOSRD
-preplace inst axi_interconnect_0 -pg 1 -lvl 4 -x 1230 -y 180 -defaultsOSRD
-preplace inst axi_interconnect_1 -pg 1 -lvl 4 -x 1230 -y 850 -defaultsOSRD
-preplace inst rst_mig_7series_0 -pg 1 -lvl 2 -x 530 -y 280 -defaultsOSRD
-preplace inst util_ds_buf -pg 1 -lvl 4 -x 1230 -y 490 -defaultsOSRD
-preplace inst xdma_0 -pg 1 -lvl 5 -x 1540 -y 560 -defaultsOSRD
-preplace inst mig_7series_0 -pg 1 -lvl 5 -x 1540 -y 210 -defaultsOSRD
-preplace inst and_s_aresetn_0 -pg 1 -lvl 3 -x 860 -y 180 -defaultsOSRD
-preplace inst func_ext_reset_0 -pg 1 -lvl 1 -x 200 -y 260 -defaultsOSRD
-preplace inst system_ila_0 -pg 1 -lvl 6 -x 1840 -y 600 -defaultsOSRD
-preplace netloc and_s_aresetn_0_s_aresetn 1 3 1 1040 150n
+preplace port DDR3 -pg 1 -lvl 7 -x 2280 -y 170 -defaultsOSRD
+preplace port pcie_mgt -pg 1 -lvl 7 -x 2280 -y 520 -defaultsOSRD
+preplace port pcie_ref -pg 1 -lvl 0 -x -50 -y 490 -defaultsOSRD
+preplace port pcie2gdma_reg -pg 1 -lvl 7 -x 2280 -y 870 -defaultsOSRD
+preplace port gdma_pattern -pg 1 -lvl 0 -x -50 -y 80 -defaultsOSRD
+preplace port port-id_axi_aclk -pg 1 -lvl 7 -x 2280 -y 560 -defaultsOSRD
+preplace port port-id_pcie_rst_n -pg 1 -lvl 0 -x -50 -y 560 -defaultsOSRD
+preplace port port-id_axi_areset_n -pg 1 -lvl 7 -x 2280 -y 580 -defaultsOSRD
+preplace port port-id_sys_clk -pg 1 -lvl 0 -x -50 -y 180 -defaultsOSRD
+preplace port port-id_host_rst -pg 1 -lvl 0 -x -50 -y 280 -defaultsOSRD
+preplace inst axi_bram_ctrl_0 -pg 1 -lvl 5 -x 1840 -y 870 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 4 -x 1310 -y 180 -defaultsOSRD
+preplace inst axi_interconnect_1 -pg 1 -lvl 4 -x 1310 -y 852 -defaultsOSRD
+preplace inst rst_mig_7series_0 -pg 1 -lvl 2 -x 490 -y 280 -defaultsOSRD
+preplace inst util_ds_buf -pg 1 -lvl 4 -x 1310 -y 490 -defaultsOSRD
+preplace inst xdma_0 -pg 1 -lvl 5 -x 1840 -y 560 -defaultsOSRD
+preplace inst mig_7series_0 -pg 1 -lvl 5 -x 1840 -y 210 -defaultsOSRD
+preplace inst and_s_aresetn_0 -pg 1 -lvl 3 -x 810 -y 180 -defaultsOSRD
+preplace inst func_ext_reset_0 -pg 1 -lvl 1 -x 160 -y 260 -defaultsOSRD
+preplace inst system_ila_0 -pg 1 -lvl 6 -x 2150 -y 600 -defaultsOSRD
+preplace inst axi_interconnect_1|s00_couplers -pg 1 -lvl 1 -x 1340 -y 862 -defaultsOSRD
+preplace netloc and_s_aresetn_0_s_aresetn 1 3 1 980 150n
 preplace netloc func_ext_reset_0_ext_reset_in 1 1 1 N 260
 preplace netloc host_rst_1 1 0 1 NJ 280
-preplace netloc mig_7series_0_init_calib_complete 1 1 5 360 390 NJ 390 NJ 390 NJ 390 1700
-preplace netloc mig_7series_0_ui_clk 1 0 6 40 340 350 380 NJ 380 1030 340 NJ 340 1710
-preplace netloc mig_7series_0_ui_clk_sync_rst 1 0 6 50 400 NJ 400 NJ 400 NJ 400 NJ 400 1720
+preplace netloc mig_7series_0_init_calib_complete 1 1 5 320 390 NJ 390 NJ 390 NJ 390 1990
+preplace netloc mig_7series_0_ui_clk 1 0 6 0 340 310 380 NJ 380 970 340 NJ 340 2000
+preplace netloc mig_7series_0_ui_clk_sync_rst 1 0 6 10 400 NJ 400 NJ 400 NJ 400 NJ 400 2010
 preplace netloc reset_rtl_0_1 1 0 5 NJ 560 NJ 560 NJ 560 NJ 560 NJ
-preplace netloc rst_mig_7series_0_100M_peripheral_aresetn 1 2 3 700 260 1050 330 1380J
-preplace netloc sys_clk_i_0_1 1 0 5 30J 410 NJ 410 NJ 410 NJ 410 1370J
-preplace netloc util_ds_buf_IBUF_OUT 1 4 1 1370J 480n
-preplace netloc xdma_0_axi_aclk1 1 2 5 710 100 1020 720 1380 720 1750 510 1930
-preplace netloc xdma_0_axi_aresetn 1 2 5 710 570 1010 730 1370 730 1720 500 1940
-preplace netloc xdma_0_user_lnk_up 1 4 2 1370 110 1730
-preplace netloc S01_AXI_0_1 1 0 6 NJ 80 NJ 80 NJ 80 1030J 30 N 30 1740
+preplace netloc rst_mig_7series_0_100M_peripheral_aresetn 1 2 3 660 260 990 330 1590J
+preplace netloc sys_clk_i_0_1 1 0 5 -10J 410 NJ 410 NJ 410 NJ 410 1570J
+preplace netloc util_ds_buf_IBUF_OUT 1 4 1 1570J 480n
+preplace netloc xdma_0_axi_aclk1 1 2 5 670 100 960 720 1590 720 2040 510 2250
+preplace netloc xdma_0_axi_aresetn 1 2 5 670 570 950 730 1570 730 2010 500 2260
+preplace netloc xdma_0_user_lnk_up 1 4 2 1570 110 2020
+preplace netloc S01_AXI_0_1 1 0 6 NJ 80 NJ 80 NJ 80 970J 30 N 30 2030
 preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 5 2 NJ 870 N
 preplace netloc axi_interconnect_0_M00_AXI 1 4 1 N 180
-preplace netloc axi_interconnect_1_M00_AXI 1 4 1 N 850
+preplace netloc axi_interconnect_1_M00_AXI 1 4 1 1580 850n
 preplace netloc diff_clock_rtl_0_1 1 0 4 NJ 490 NJ 490 NJ 490 NJ
 preplace netloc mig_7series_0_DDR3 1 5 2 NJ 170 N
-preplace netloc xdma_0_M_AXI 1 3 3 1060 710 NJ 710 1710
-preplace netloc xdma_0_M_AXI_LITE 1 3 3 1070 700 NJ 700 1700
+preplace netloc xdma_0_M_AXI 1 3 3 1000 710 NJ 710 2000
+preplace netloc xdma_0_M_AXI_LITE 1 3 3 1010 700 NJ 700 1990
 preplace netloc xdma_0_pcie_mgt 1 5 2 NJ 520 N
-levelinfo -pg 1 -10 200 530 860 1230 1540 1840 1970
-pagesize -pg 1 -db -bbox -sgen -150 -20 2120 1750
+preplace netloc axi_interconnect_1|S00_ACLK_1 1 0 1 N 882
+preplace netloc axi_interconnect_1|S00_ARESETN_1 1 0 1 N 902
+preplace netloc axi_interconnect_1|axi_interconnect_1_ACLK_net 1 0 1 1220 842n
+preplace netloc axi_interconnect_1|axi_interconnect_1_ARESETN_net 1 0 1 1230 862n
+preplace netloc axi_interconnect_1|axi_interconnect_1_to_s00_couplers 1 0 1 N 822
+preplace netloc axi_interconnect_1|s00_couplers_to_axi_interconnect_1 1 1 1 N 862
+levelinfo -pg 1 -50 160 490 810 1310 1840 2150 2280
+levelinfo -hier axi_interconnect_1 * 1340 *
+pagesize -pg 1 -db -bbox -sgen -190 -20 2430 1750
+pagesize -hier axi_interconnect_1 -db -bbox -sgen 1190 762 1480 952
 "
 }
 {

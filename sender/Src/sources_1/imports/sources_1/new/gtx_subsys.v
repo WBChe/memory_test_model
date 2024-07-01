@@ -223,16 +223,12 @@ aurora_8b10b_0 aurora_8b10b_0_i
     );
 
 ////ila
-//gtx_ila gtx_ila_tx (
-//	.clk(user_clk), // input wire clk
-//	.probe0(fifo2gt_tvalid), // input wire [0:0]  probe0  
-//	.probe1(fifo2gt_tdata) // input wire [31:0]  probe1
-//);
 
-//gtx_ila gtx_ila_rx (
-//	.clk(user_clk), // input wire clk
-//	.probe0(gt2fifo_tvalid), // input wire [0:0]  probe0  
-//	.probe1(gt2fifo_tdata) // input wire [31:0]  probe1
-//);
+ila_subsys subsys_rx (
+	.clk(user_clk), // input wire clk
+	.probe0(gt2fifo_tready), // input wire [0:0]  probe0  
+	.probe1(gt2fifo_tvalid), // input wire [0:0]  probe1 
+	.probe2(gt2fifo_tdata) // input wire [31:0]  probe2
+);
 
 endmodule
